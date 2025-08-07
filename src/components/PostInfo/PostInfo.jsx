@@ -1,19 +1,21 @@
-export const PostInfo = ({ posts }) => (
+// import UserInfo from '../UserInfo/UserInfo';
+import CommentList from '../CommentList/CommentList';
+import './PostInfo.scss';
+
+export const PostInfo = ({ post }) => (
   <div className="PostInfo">
     <div className="PostInfo__header">
-      <h3 className="PostInfo__title">{posts.title}</h3>
-
+      <h3 className="PostInfo__title">{post.title}</h3>
       <p>
-        {' Posted by  '}
-
-        <a className="UserInfo" href={`mailto:${posts.email}`}>
-          {posts.info}
+        {' Posted by '}
+        <a className="UserInfo" href={`mailto:${post.user.email}`}>
+          {post.user.name}
         </a>
       </p>
     </div>
-
-    <p className="PostInfo__body">{posts.body}</p>
+    <p className="PostInfo__body">{post.body}</p>
+    <CommentList comments={post.comments} />
   </div>
 );
 
-// </div><>Put the post here</>;
+export default PostInfo;

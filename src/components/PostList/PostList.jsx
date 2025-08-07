@@ -1,7 +1,12 @@
-import PostInfo from '../CommentInfo/PostInfo'
+import PostInfo from '../PostInfo/PostInfo';
+import './PostList.scss';
 
-export const PostList = () => (
+const PostList = ({ posts }) => (
   <div className="PostList">
-    <PostInfo />
+    {posts.map(post => (
+      <PostInfo post={post} key={post.id} />
+    ))}
   </div>
-)
+);
+
+export default PostList;
