@@ -1,1 +1,7 @@
-export const PostList = () => <>Put the list here</>;
+import PostInfo from '../CommentInfo/PostInfo'
+
+export const PostList = () => (
+  <div className="PostList">
+    <PostInfo />
+  </div>
+)
